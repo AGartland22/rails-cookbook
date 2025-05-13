@@ -1,3 +1,11 @@
+
+<div class="banner" style="background-image: url(<%= image_path 'banner.png' %>)">
+    <div>
+      <h1>Cookbook</h1>
+      <h3>Save your favourite recipes</h3>
+    </div>
+</div>
+
 <h1>Cook Book</h1>
 
 <ul>
@@ -6,3 +14,5 @@
   <% end %>
 
 </ul>
+
+<%= link_to "Add Category", new_category_path %>
