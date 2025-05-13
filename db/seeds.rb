@@ -12,6 +12,8 @@
 
 #Clean database before running seed file
 puts "Cleaning database..."
+Bookmark.destroy_all
+Category.destroy_all
 Recipe.destroy_all
 
 puts "Creating new recipes..."
@@ -27,5 +29,9 @@ Recipe.create!(name: "Lasagne Verdi al Forno",
                description: "This lasagne verde made with spinach pasta cannot be beaten.",
                 image_url: "https://www.allrecipes.com/thmb/NZiIlIWZvNJlhqyYvspUr7s9UjM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/421809-686b67e690ae4a40a9e8d588ea692c3c.jpg",
                 rating: 4.1)
+Recipe.create!(name: "Spaghetti all Carbonara 2",
+              description: "Carbonara is made with guanciale (cured pork), eggs, Pecorino Romano cheese, spaghetti pasta, and lots of black pepper.",
+              image_url: "https://www.allrecipes.com/thmb/InzCzO3OWS1inqCRU3AJhv33fhg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/245775-spaghetti-alla-carbonara-the-traditional-italian-recipe-DDMFS-4x3-879c32ee3cfb463582e3e6230e311029.jpg",
+              rating: 4.5)
 
 puts "#{Recipe.count} recipes created"

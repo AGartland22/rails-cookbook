@@ -6,13 +6,24 @@
     </div>
 </div>
 
-<h1>Cook Book</h1>
+<div class="container">
+  <div class = "info-top">
+    <h2>List of Categories</h2>
+  <%= link_to "New Category", new_category_path, class: "btn custom-btn text-white" %>
+  </div>
 
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= link_to category.name, category_path(category) %></li>
-  <% end %>
+  <div class="cards">
+    <% @categories.each do |category| %>
 
-</ul>
+    <%= link_to category_path(category) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <div>
+            <h3><%= category.name %></h3>
+            <p><%= category.bookmarks.count %> recipes</p>
+          </div>
+      </div>
+      <% end %>
 
-<%= link_to "Add Category", new_category_path %>
+    <% end %>
+  </div>
+</div>
